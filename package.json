@@ -4,7 +4,6 @@
   "license": "MIT",
   "scripts": {},
   "private": true,
-  "type": "module",
   "dependencies": {
     "vue": "^3.3.4"
   },
