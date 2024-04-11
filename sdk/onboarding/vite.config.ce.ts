@@ -30,5 +30,29 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
+    lib: {
+
+      // Could also be a dictionary or array of multiple entry points.
+      entry: 'src/index.ts',
+      name: 'onboarding',
+      fileName: 'onboarding.sdk',
+      // Change this to the formats you want to support.
+      // Don't forget to update your package.json as well.
+      formats: ['es', 'cjs'],
+    },
+    rollupOptions: {
+      // External packages that should not be bundled into your library.
+      external: [],
+      output: {
+        // Provide global variables to use in the UMD build
+        // for externalized deps
+        globals: {
+          vue: "Vue",
+        },
+      },
+    },
   },
+  define: {
+    "process.env": {}
+  }
 });
