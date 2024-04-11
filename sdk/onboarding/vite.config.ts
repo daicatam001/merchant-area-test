@@ -2,7 +2,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
-
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 export default defineConfig({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/sdk/onboarding',
@@ -17,7 +17,7 @@ export default defineConfig({
     host: 'localhost',
   },
 
-  plugins: [vue(), nxViteTsPaths()],
+  plugins: [vue(), nxViteTsPaths(),cssInjectedByJsPlugin()],
 
   // Uncomment this if you are using workers.
   // worker: {
@@ -30,5 +30,29 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
+    lib: {
+
+      // Could also be a dictionary or array of multiple entry points.
+      entry: 'src/index.ts',
+      name: 'onboarding',
+      fileName: 'onboarding.sdk',
+      // Change this to the formats you want to support.
+      // Don't forget to update your package.json as well.
+      formats: ['es', 'cjs'],
+    },
+    rollupOptions: {
+      // External packages that should not be bundled into your library.
+      external: ['vue'],
+      output: {
+        // Provide global variables to use in the UMD build
+        // for externalized deps
+        globals: {
+          vue: "Vue",
+        },
+      },
+    },
   },
+  define: {
+    "process.env": {}
+  }
 });
