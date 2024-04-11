@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@pw-merchant-area/onboarding": ["libs/features/onboarding/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
