@@ -1,8 +1,0 @@
-{
-  "name": "onboarding-sdk",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "application",
-  "sourceRoot": "sdk/onboarding/src",
-  "// targets": "to see all targets run: nx show project onboarding-sdk --web",
-  "targets": {}
-}
