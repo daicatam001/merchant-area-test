@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import NxWelcome from './NxWelcome.vue';
 </script>
 
 <template>
-  <NxWelcome title="onboarding-sdk" />
+  <div class="bg-red-400 h-screen">
+    <h1 class="text-center">Onboarding SDK</h1>
+  </div>
 </template>
