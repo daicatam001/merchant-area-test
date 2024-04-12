@@ -1,33 +1,37 @@
 export interface IOnboardingSdkConfig {
-  token: string
-  mode: 'modal' | 'inline'
+  token: string;
+  mode: 'modal' | 'inline';
 }
 
 export interface IOnboardingSdkHook {
-  onMounted?: () => {
-
-  }
+  onMounted?: () => {};
 }
 
 class OnboardingSdkService {
   options = {
     token: '',
-    mode: 'inline'
-  }
+    mode: 'inline',
+  };
 
   hooks = {
-    onMounted: () => { }
-  }
+    onMounted: () => {},
+  };
 
-  constructor() {
-  }
+  constructor() {}
 
   init(options: IOnboardingSdkConfig, hooks: IOnboardingSdkHook = {}) {
     if (!options) {
-      throw new Error("No config provided");
+      throw new Error('No config provided');
     }
-    this.options = { ...this.options, ...options }
-    this.hooks = { ...this.hooks, ...hooks }
+    this.options = { ...this.options, ...options };
+    this.hooks = { ...this.hooks, ...hooks };
+  }
+  get token() {
+    return this.options.token;
+  }
+
+  get mode() {
+    return this.options.mode;
   }
 }
 
