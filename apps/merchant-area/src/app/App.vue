@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import NxWelcome from './NxWelcome.vue';
+import {OnboardingFeature} from '@pw-merchant-area/onboarding'
 </script>
 
 <template>
-  <NxWelcome title="merchant-area" />
+  <OnboardingFeature/>
 </template>

@@ -14,7 +14,7 @@ import onboardingSdkService from './service'
       <div>Mode:{{ onboardingSdkService.mode }} </div>
     </div>
     <p class="p-6 grow">
-      <OnboardingFeature />
+      <OnboardingFeature :user-token="onboardingSdkService.token" />
     </p>
   </div>
 </template>
