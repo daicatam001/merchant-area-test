@@ -1,5 +1,9 @@
 <script setup
   lang="ts">
+  import { PwButton } from '@pw-merchant-area/shared-ui';
+  import DefaultLayout from './DefaultLayout.vue'
+  import ProgressBar from './ProgressBar.vue'
+  import MainContent from './MainContent.vue'
   defineProps({
     userToken: {
       type: String,
@@ -8,8 +12,10 @@
   })
 </script>
 <template>
-  <div class="bg-blue-300 h-full">
-    <h1 class="text-center">New Onboarding Flow</h1>
-     <p class="text-center">UserToken: {{ userToken }}</p>
-  </div>
+  <DefaultLayout>
+    <template #progressbar>
+      <ProgressBar />
+    </template>
+    <MainContent/>
+  </DefaultLayout>
 </template>

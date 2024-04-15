@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@pw-merchant-area/onboarding": ["libs/features/onboarding/src/index.ts"]
+      "@pw-merchant-area/onboarding": ["libs/features/onboarding/src/index.ts"],
+      "@pw-merchant-area/shared-ui": ["libs/shared/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
