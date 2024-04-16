@@ -13,7 +13,15 @@ export const useLegalEntityForm = () => {
   });
 
   const initialValues = {
-    name: '',
+    dp_company_name: '',
+    dp_reg_number: '',
+    dp_tax_id: '',
+    dp_co_id: '',
+    dp_street: '',
+    dp_city: '',
+    dp_state: '',
+    dp_zip_code: '',
+    dp_public_company: false
   };
   const { setFieldValue, handleSubmit, errors, values } = useForm({
     initialValues,

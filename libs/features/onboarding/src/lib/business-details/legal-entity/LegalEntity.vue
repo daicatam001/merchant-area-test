@@ -24,6 +24,11 @@
         </div>
       </div>
     </form>
+    <PwMessage :severity="'info'"
+      class="mt-6"
+      :closable="false"
+      :title="'Please note'"> Paymentwall can only onboard company accounts. To accept payments as an Individual/Sole
+      Proprietorship, we recommend you sing up for FasterPay. Click to learn more FasterPay </PwMessage>
     <template #footer>
       <div class="grid grid-cols-2 gap-6 mt-6">
         <PwButton type="submit"
@@ -35,8 +40,8 @@
   </PwVerticalLayout>
 </template>
 <script setup lang="ts">
-import { PwButton, PwInputText, PwDropdown, PwVerticalLayout } from '@pw-merchant-area/shared-ui'
-import { useLegalEntityForm } from '../composables'
+import { PwButton, PwInputText, PwDropdown, PwVerticalLayout, PwCheckbox, PwMessage } from '@pw-merchant-area/shared-ui'
+import { useLegalEntityForm } from './useLegalEntity'
 const { values, ...vm } = useLegalEntityForm();
 const entityInfo = [
   {
@@ -89,15 +94,22 @@ const addressInfo = [
       label: "State", name: "dp_state",
     },
     component: PwInputText
-  }, {
+  },
+  {
     class: 'col-span-2',
     attrs: {
       label: "Zip code", name: "dp_zip_code",
     },
     component: PwInputText
-  }
-
-
+  },
+  {
+    class: 'col-span-full',
+    attrs: {
+      label: "This is a publicly-listed company", name: "dp_public_company",
+      binary: true
+    },
+    component: PwCheckbox
+  },
 ]
 const onSubmit = () => {
   console.log('submit')

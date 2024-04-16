@@ -5,7 +5,7 @@
       class="pw-textfield--label">{{ label }}</label>
     <InputText :pt="inputtext"
       @change="handleBlur"
-      class="pw-textfield--input"
+      class="pw-textfield--cmp"
       v-bind="$attrs"
       v-model.lazy="inputValue"
       :invalid="hasError"
@@ -26,7 +26,7 @@
   @apply block font-medium mb-2
 }
 
-.pw-textfield--input {
+.pw-textfield--cmp {
   @apply w-full
 }
 </style>
@@ -49,7 +49,6 @@ const props = defineProps({
 const {
   value: inputValue,
   errorMessage,
-  errors,
   meta,
   handleBlur,
 } = useField<string | number | null | undefined>(props.name);

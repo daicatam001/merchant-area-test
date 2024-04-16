@@ -5,9 +5,9 @@
       class="pw-dropdown--label">{{ label }}</label>
     <Dropdown :pt="dropdown"
       @change="handleBlur"
-      class="pw-dropdown--element"
+      class="pw-dropdown--cmp"
       v-bind="$attrs"
-      v-model.lazy="inputValue"
+      v-model.lazy="checkboxValue"
       :invalid="hasError"
       :unstyled="true">
       <slot v-for="(_, name) in $slots"
@@ -26,7 +26,7 @@
   @apply block font-medium mb-2
 }
 
-.pw-dropdown--element {
+.pw-dropdown--cmp {
   @apply w-full
 }
 </style>
@@ -47,9 +47,8 @@ const props = defineProps({
 });
 
 const {
-  value: inputValue,
+  value: checkboxValue,
   errorMessage,
-  errors,
   meta,
   handleBlur,
 } = useField<string | number | null | undefined>(props.name);
@@ -66,7 +65,7 @@ const dropdown = {
       'rounded-md',
       // Color and Background
       'bg-surface-0 dark:bg-surface-900',
-      'border',
+      'border border-input-border',
       { 'border-surface-300 dark:border-surface-600': !props.invalid },
       // Invalid State
       { 'border-red-500 dark:border-red-400': props.invalid },
@@ -121,7 +120,7 @@ const dropdown = {
     class: ['absolute top-0 left-0', 'border-0 dark:border', 'rounded-md', 'shadow-md', 'bg-surface-0 dark:bg-surface-800', 'text-surface-800 dark:text-white/80', 'dark:border-surface-700']
   },
   wrapper: {
-    class: ['max-h-[200px]', 'overflow-auto']
+    class: ['max-h-[200px]', 'overflow-auto','bg-white']
   },
   list: {
     class: 'py-3 list-none m-0'

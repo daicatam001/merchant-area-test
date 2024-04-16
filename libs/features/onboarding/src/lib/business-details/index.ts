@@ -1,1 +1,1 @@
-export {default as LegalEntity} from './LegalEntity.vue'
+export {default as LegalEntity} from './legal-entity/LegalEntity.vue'
