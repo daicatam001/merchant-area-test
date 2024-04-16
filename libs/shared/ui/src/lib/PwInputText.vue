@@ -14,12 +14,11 @@
         :name="name"
         :slot="name"></slot>
     </InputText>
-    <div class="pw-textfield-help"
-      :class="{ 'pw-textfield-help-show': hasError }">
+    <PwFormHelp :show="hasError">
       <PwErrorMessage v-if="hasError"
         :error="errorMessage"
         :label="label" />
-    </div>
+    </PwFormHelp>
   </div>
 </template>
 <style>
@@ -30,22 +29,11 @@
 .pw-textfield--input {
   @apply w-full
 }
-
-.pw-textfield--error-msg {
-  @apply text-red-500
-}
-
-.pw-textfield .pw-textfield-help {
-  @apply h-0 !mb-5 overflow-hidden
-}
-
-.pw-textfield .pw-textfield-help.pw-textfield-help-show {
-  @apply h-5 !mb-0 transition-all duration-500
-}
 </style>
 <script lang="ts" setup>
 import InputText from 'primevue/inputtext';
 import PwErrorMessage from './PwErrorMessage.vue';
+import PwFormHelp from './PwFormHelp.vue';
 import { useField } from 'vee-validate'
 import { computed } from 'vue';
 const props = defineProps({

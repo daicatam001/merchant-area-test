@@ -3,7 +3,8 @@
     <template #header>
       <h1>Business profile</h1>
     </template>
-    <form @submit.prevent="onSubmit()" id="business-profile-form">
+    <form @submit.prevent="onSubmit()"
+      id="business-profile-form">
       <h3>Legal entity information</h3>
       <div class="grid grid-cols-8 gap-x-6 gap-y-2">
         <div v-for="item of entityInfo"
@@ -27,13 +28,14 @@
       <div class="grid grid-cols-2 gap-6 mt-6">
         <PwButton type="submit"
           class="col-start-2"
-          label="Save and Continue" form="business-profile-form"></PwButton>
+          label="Save and Continue"
+          form="business-profile-form"></PwButton>
       </div>
     </template>
   </PwVerticalLayout>
 </template>
 <script setup lang="ts">
-import { PwButton, PwInputText, PwVerticalLayout } from '@pw-merchant-area/shared-ui'
+import { PwButton, PwInputText, PwDropdown, PwVerticalLayout } from '@pw-merchant-area/shared-ui'
 import { useLegalEntityForm } from '../composables'
 const { values, ...vm } = useLegalEntityForm();
 const entityInfo = [
@@ -65,7 +67,7 @@ const addressInfo = [
     attrs: {
       label: "Country", name: "dp_co_id",
     },
-    component: PwInputText
+    component: PwDropdown
   },
   {
     class: 'col-span-4',
@@ -87,7 +89,7 @@ const addressInfo = [
       label: "State", name: "dp_state",
     },
     component: PwInputText
-  },{
+  }, {
     class: 'col-span-2',
     attrs: {
       label: "Zip code", name: "dp_zip_code",
