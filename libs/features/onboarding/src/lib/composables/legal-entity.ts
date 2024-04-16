@@ -1,20 +1,15 @@
 import { useForm } from 'vee-validate';
 import * as yup from 'yup'
-yup.s
 export const useLegalEntityForm = () => {
   const validate = yup.object({
-    name: yup.string().required()
-    // email: yup.string().email().required('Your email is required'),
-    // first_name: yup.string().required('First name is required'),
-    // last_name: yup.string().required('Last name is required'),
-    // phone: yup.string().required('Phone number is required'),
-    // phone_code: yup.mixed().nullable().required('Country code is required'),
-    // recieve_notification: yup
-    //   .boolean()
-    //   .oneOf([true, false], 'This field is required'),
-    // accept_policy: yup
-    //   .boolean()
-    //   .oneOf([true], 'Please accept the policies to continue'),
+    dp_company_name: yup.string().required(),
+    dp_reg_number: yup.string().required(),
+    dp_tax_id: yup.string().required(),
+    dp_co_id: yup.string().required(),
+    dp_street: yup.string().required(),
+    dp_city: yup.string().required(),
+    dp_state: yup.string().required(),
+    dp_zip_code: yup.string().required(),
   });
 
   const initialValues = {

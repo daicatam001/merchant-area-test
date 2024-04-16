@@ -14,9 +14,9 @@
         // Alignments
         'items-center justify-center inline-flex text-center align-bottom',
         // Sizes & Spacing
-        'text-sm',
+        'text-base',
         {
-          'px-2.5 py-1.5 min-w-[2rem]': props.size === null,
+          'px-2.5 py-1.5 min-w-[2rem] h-[52px] leading-[52px]': props.size === null,
           'px-2 py-1': props.size === 'small',
           'px-3 py-2': props.size === 'large'
         },
@@ -42,8 +42,8 @@
         // --- Severity Buttons ---
         // Primary Button
         {
-          'text-white dark:text-surface-900': !props.link && props.severity === null && !props.text && !props.outlined && !props.plain,
-          'bg-primary-500 dark:bg-primary-400': !props.link && props.severity === null && !props.text && !props.outlined && !props.plain,
+          'text-black dark:text-surface-900': !props.link && props.severity === null && !props.text && !props.outlined && !props.plain,
+          'bg-primary dark:bg-primary-400': !props.link && props.severity === null && !props.text && !props.outlined && !props.plain,
           'ring-1 ring-primary-500 dark:ring-primary-400': !props.link && props.severity === null && !props.text && !props.outlined && !props.plain
         },
         // Primary Text Button

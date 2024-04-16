@@ -1,8 +1,8 @@
 import { setLocale } from 'yup'
-
+import { ERROR_CODE } from '@pw-merchant-area/shared-constants'
 setLocale({
-  mixed:{
-    required:'required'
+  mixed: {
+    required: { code: ERROR_CODE.REQUIRED }
   }
 })
 

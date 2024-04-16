@@ -1,9 +1,6 @@
 <template>
-  <div>
-    <LegalEntity />
-  </div>
+  <LegalEntity />
 </template>
-<script lang="ts"
-  setup>
-  import { LegalEntity } from './business-details'
+<script lang="ts" setup>
+import { LegalEntity } from './business-details'
 </script>
