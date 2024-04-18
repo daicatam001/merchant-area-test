@@ -3,6 +3,16 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
+
+export const modifySource = ()=>{
+  return {
+    name:'modifySource',
+    transform(source){
+      console.log(source)
+    }
+  }
+}
+
 export default defineConfig({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/sdk/onboarding',
@@ -17,7 +27,7 @@ export default defineConfig({
     host: 'localhost',
   },
 
-  plugins: [vue(), nxViteTsPaths(),cssInjectedByJsPlugin()],
+  plugins: [vue({ customElement: true }), nxViteTsPaths(),modifySource()],
 
   // Uncomment this if you are using workers.
   // worker: {
@@ -30,6 +40,8 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
+    cssCodeSplit :false,
+    minify: false,
     lib: {
 
       // Could also be a dictionary or array of multiple entry points.

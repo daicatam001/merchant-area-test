@@ -6,7 +6,7 @@ import onboardingSdkService from './service'
 
 </script>
 <template>
-  <div class="bg-red-400 h-screen flex flex-col"
+  <div class="onboarding-sdk"
     :class="{ 'fixed inset-0 w-full h-full z-100': onboardingSdkService.mode === 'modal' }">
     <h1 class="text-center">Onboarding SDK</h1>
     <div class="flex gap-6">
@@ -20,4 +20,7 @@ import onboardingSdkService from './service'
 </template>
 <style>
 @import url('./styles.css');
+.onboarding-sdk{
+  @apply flex flex-col
+}
 </style>

@@ -11,10 +11,15 @@
   })
 </script>
 <template>
-  <DefaultLayout>
+  <DefaultLayout class="ob-feature">
     <template #progressbar>
       <ProgressBar />
     </template>
     <MainContent/>
   </DefaultLayout>
 </template>
+<style>
+.ob-feature{
+  @apply bg-red-500
+}
+</style>

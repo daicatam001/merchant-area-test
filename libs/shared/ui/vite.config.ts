@@ -10,7 +10,7 @@ export default defineConfig({
   cacheDir: '../../../node_modules/.vite/libs/shared/ui',
 
   plugins: [
-    vue(),
+    vue({customElement:true}),
     nxViteTsPaths(),
     dts({
       entryRoot: 'src',

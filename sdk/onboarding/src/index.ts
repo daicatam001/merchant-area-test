@@ -1,5 +1,5 @@
 import { defineCustomElement } from 'vue';
-import OnboardingSdk from './OnboardingSdk.ce.vue';
+import OnboardingSdk from './OnboardingSdk.vue';
 import onboardingSdkService, { type IOnboardingSdkConfig } from './service';
 window.customElements.define(
   'onboarding-sdk',

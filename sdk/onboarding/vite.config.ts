@@ -26,6 +26,8 @@ export default defineConfig({
 
   build: {
     outDir: '../../dist/sdk/onboarding',
+    cssCodeSplit :false,
+    minify:false,
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,

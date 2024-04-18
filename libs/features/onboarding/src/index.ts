@@ -6,4 +6,4 @@ setLocale({
   }
 })
 
-export { default as OnboardingFeature } from './lib/OnboardingFeature.vue'
+export { default as OnboardingFeature } from './lib/OnboardingFeature.ce.vue'
